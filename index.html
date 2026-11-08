@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Bottle Studio | 脱出ゲームの新着情報などお届けします</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --accent-color: #8ed1ca;
+            --text-main: #554a41;
+            --card-bg: #ffffff;
+            --border-radius: 20px;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 1.1;
+            color: #554a41;
+            text-align: left;
+        }
+
+        .logo-text span {
+            display: block;
+        }
+
+        .subtitle {
+            font-size: 0.95em;
+            color: #888;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            border: 2px solid #eaeaea;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .game-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+        }
+
+        .thumbnail {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #f0f0f0;
+            border-radius: calc(var(--border-radius) - 5px);
+            overflow: hidden;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #bbb;
+        }
+
+        .game-ss {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: inherit;
+        }
+
+        .game-card h3 {
+            font-size: 1.1em;
+            margin: 10px 0 5px 0;
+        }
+
+        .game-card p {
+            font-size: 0.88em;
+            color: #777;
+        }
+
+        .store-links {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .store-button img {
+            height: 35px;
+            width: auto;
+        }
+
+        .footer-item {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .footer-item:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-wrapper">
+                <img src="logo_icon.png" alt="" style="height: 80px; width: auto;">
+                <div class="logo-text">
+                    <span>Cozy Bottle</span>
+                    <span>Studio</span>
+                </div>
+            </div>
+            <p class="subtitle">ちいさな謎と、ほっこりする時間。</p>
+        </header>
+
+        <div class="game-grid">
+            <div class="game-card">
+                <a href="skydiving.html" style="text-decoration: none; color: inherit;">
+                    <div class="thumbnail">
+                        <img src="skydiving.png" alt="ゲーム画面" class="game-ss">
+                    </div>
+                    <h3>脱出ゲーム スカイダイビング 高度4000mからの帰り道</h3>
+                    <p>おうちに帰るまでがスカイダイビングです。</p>
+                </a>
+                <div class="store-links">
+                    <a href="https://play.google.com/store/apps/details?id=com.chocoedge.skydiving" target="_blank" class="store-button">
+                        <img src="GooglePlayEn.png" alt="Google Play">
+                    </a>
+                    <a href="https://apps.apple.com/app/id6779870345" class="store-button" target="_blank" class="store-button">
+                        <img src="AppStore.svg" alt="App Store">
+                    </a>
+                    <!--未リンクのときは以下を追加 style="opacity: 0.4; filter: grayscale(100%); pointer-events: none;"-->
+                </div>
+            </div>
+
+<div class="game-card">
+    <div class="thumbnail">
+        <img src="公式サイト用高原列車フィーチャー画像.png" alt="ゲーム画面" class="game-ss">
+    </div>
+    <h3>脱出ゲーム 高原列車と紙の切符</h3>
+    <p>3人の仲間と白銀の山々を走る列車に乗ります。現在鋭意制作中。</p>
+    <div class="store-links">
+        <span class="store-button" style="opacity: 0.4; filter: grayscale(100%);">
+            <img src="GooglePlayEn.png" alt="Google Play">
+        </span>
+        <span class="store-button" style="opacity: 0.4; filter: grayscale(100%);">
+            <img src="AppStore.svg" alt="App Store">
+        </span>
+    </div>
+</div>            </div>
+        </div> </div> <footer style="margin-top: 80px; padding: 40px 0; border-top: 1px solid #eee; text-align: center;">
+        <div class="footer-links" style="margin-bottom: 20px;">
+            <a href="contact.html" class="footer-item">お問い合わせ</a>
+            <span style="margin: 0 10px; color: #ccc;">|</span>
+            <a href="privacy.html" class="footer-item">プライバシーポリシー</a>
+        </div>
+        <p style="font-size: 0.8em; color: #aaa;">&copy; 2026 Cozy Bottle Studio. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
