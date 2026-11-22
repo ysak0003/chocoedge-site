@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrocoAlarm | Cozy Bottle Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --accent-color: #8ed1ca;
+            --text-main: #554a41;
+            --card-bg: #ffffff;
+            --border-radius: 20px;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 { font-size: 1.8em; margin-bottom: 10px; }
+        .description { font-size: 1.1em; color: #666; margin-bottom: 40px; }
+
+        /* メイン画像（フィーチャーグラフィックなど 1024×500 を想定） */
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 1024 / 500;
+            background: #f0f0f0;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #bbb;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin: 0 0 20px 0;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 2px solid #eee;
+            border-radius: var(--border-radius);
+            padding: 20px;
+        }
+
+        .feature-card h3 { font-size: 1em; margin: 0 0 5px 0; }
+        .feature-card p { font-size: 0.88em; color: #777; margin: 0; }
+
+        /* スクリーンショット（パソコンは3列、スマホは横スクロール） */
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .screenshots img {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            border-radius: 15px;
+            border: 2px solid #eee;
+            object-fit: cover;
+            background: #f0f0f0;
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .screenshots {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                padding-bottom: 10px;
+            }
+            .screenshots img {
+                flex: 0 0 60%;
+                width: 60%;
+                min-width: 0;
+                scroll-snap-align: start;
+            }
+        }
+
+        .lead {
+            font-size: 1.25em;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+
+        .info-box {
+            background: var(--card-bg);
+            border: 2px solid #eee;
+            border-radius: var(--border-radius);
+            padding: 20px 25px;
+            margin-bottom: 40px;
+        }
+
+        .info-box ul {
+            margin: 0;
+            padding-left: 1.2em;
+        }
+
+        .info-box li {
+            font-size: 0.92em;
+            color: #666;
+            margin: 4px 0;
+        }
+
+        .info-box p {
+            font-size: 0.92em;
+            color: #666;
+            margin: 0 0 8px 0;
+        }
+
+        .info-box p:last-child { margin-bottom: 0; }
+
+        .credit {
+            text-align: center;
+            font-size: 0.8em;
+            color: #aaa;
+            margin-top: 10px;
+        }
+
+        .credit a { color: #aaa; }
+
+        .store-section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 2px solid #eee;
+        }
+
+        .store-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .store-button img { height: 45px; width: auto; }
+
+        .policy-note {
+            text-align: center;
+            font-size: 0.85em;
+            color: #888;
+            margin-top: 20px;
+        }
+
+        .policy-note a { color: var(--accent-color); }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 50px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* ===== 共通メニュー（全ページ同じ内容） ===== */
+        .site-nav {
+            background: #ffffff;
+            border-bottom: 1px solid #eee;
+        }
+        .site-nav-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #554a41;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+        .nav-brand img { height: 32px; width: auto; }
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            margin: 0 0 0 auto;
+            padding: 0;
+        }
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.95em;
+            padding: 4px 2px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+        .nav-links a:hover,
+        .nav-links a.current { border-bottom-color: var(--accent-color); }
+        @media (max-width: 520px) {
+            .nav-brand span { display: none; }
+            .nav-links { gap: 16px; }
+            .nav-links a { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+<nav class="site-nav">
+    <div class="site-nav-inner">
+        <a href="../index.html" class="nav-brand"><img src="../logo_icon.png" alt=""><span>Cozy Bottle Studio</span></a>
+        <ul class="nav-links">
+            <li><a href="../index.html">ゲーム</a></li>
+            <li><a href="../apps.html" class="current">アプリ</a></li>
+            <li><a href="../contact.html">お問い合わせ</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="container">
+        <h1>CrocoAlarm</h1>
+        <p class="lead">その日の予定に合わせて、アラームがまとめて切り替わる。</p>
+        <p class="description">クロコアラームは、「起床」「出発」「準備」などの複数のアラームを、1つのグループ（シフトアラーム）としてまとめておけるアラームアプリです。グループごとに鳴る曜日や日を決めておけば、その日に必要なアラームだけが全部鳴ります。</p>
+
+        <div class="hero-image">
+            <img src="alarm_feature.png" alt="CrocoAlarm">
+        </div>
+
+        <h2>こんな方に</h2>
+        <div class="info-box">
+            <ul>
+                <li>平日と休日で起きる時間が違う方</li>
+                <li>曜日で時間割が決まっている学生、習い事や教室の予定がある方</li>
+                <li>早番・遅番・夜勤など、日によって勤務時間が変わるシフト勤務の方（看護・介護・工場・小売など）</li>
+            </ul>
+        </div>
+
+        <h2>特長</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>シフトでまとめて切り替え</h3>
+                <p>「起床」「出発」「準備」などのアラームを1つのグループ（シフトアラーム）にまとめておけます。曜日ごと、4勤4休のような繰り返し、シフト表での指定の3通りで切り替えられます。</p>
+            </div>
+            <div class="feature-card">
+                <h3>カレンダーでひと目でわかる</h3>
+                <p>シフトと普通のアラームが1か月のカレンダーに並びます。日をタップすれば、その日のアラームの確認やシフトの出し入れができます。</p>
+            </div>
+            <div class="feature-card">
+                <h3>鳴った画面にメモ</h3>
+                <p>持ち物・やること・注意事項を、アラームが鳴った画面に表示します。大事なメモにはスター、その日だけのメモや一度きりのメモも作れます。</p>
+            </div>
+            <div class="feature-card">
+                <h3>終わるまでお知らせ</h3>
+                <p>「作業開始」をスライドすると、メモをすべてチェックして完了するまで、小さな音とバイブで知らせ続けます。やり忘れを防ぎます。</p>
+            </div>
+            <div class="feature-card">
+                <h3>今日だけの変更もかんたん</h3>
+                <p>「今日だけ30分遅い」「この日は鳴らさない」など、元の設定はそのままで、その日だけ時刻やON/OFFを変えられます。</p>
+            </div>
+            <div class="feature-card">
+                <h3>開始時刻でまとめてずらす</h3>
+                <p>開始時刻を変えるだけで、アラームの間隔はそのままに、鳴る時刻をまとめて変えられます。曜日ごとの開始時刻にも対応しています。</p>
+            </div>
+        </div>
+
+        <h2>スクリーンショット</h2>
+        <div class="screenshots">
+            <img src="crocoalarm0.png" alt="シフトを入れるだけ その日のアラームが全部そろう" loading="lazy">
+            <img src="crocoalarm1.png" alt="シフト表に塗るだけ 1か月分も一気に" loading="lazy">
+            <img src="crocoalarm2.png" alt="鳴った画面にメモ" loading="lazy">
+            <img src="crocoalarm3.png" alt="終わるまでお知らせ" loading="lazy">
+            <img src="crocoalarm4.png" alt="開始時刻でまとめてずらす" loading="lazy">
+            <img src="crocoalarm5.png" alt="今日だけの変更もかんたん" loading="lazy">
+        </div>
+
+        <h2>そのほかの機能</h2>
+        <div class="info-box">
+            <ul>
+                <li>夜勤にも対応（シフトごとに日付変更時刻を設定できます）</li>
+                <li>同じ日に同じシフトアラームを何回も入れられます</li>
+                <li>前日に鳴らす／改めて鳴らす／スヌーズ</li>
+                <li>メモが無い日は鳴らさない</li>
+                <li>どちらかアラーム（同じ日に重なったら、早い方か遅い方だけ鳴らす）</li>
+                <li>アラーム停止後に、その場で時刻やメモを編集</li>
+                <li>シフトに入れない普通のアラーム（一回だけ・毎日・毎週・毎月・毎年・○日ごと）</li>
+                <li>バックアップと復元</li>
+                <li>日本語と英語に対応</li>
+            </ul>
+        </div>
+
+        <h2>無料でお使いいただけます（広告あり）</h2>
+        <div class="info-box">
+            <ul>
+                <li>ホーム画面の下に広告が出ます。アラームが鳴っている画面には出ません。</li>
+                <li>アラームの新規登録・変更には「回数」を使います。回数は広告を見るとチャージできます。</li>
+                <li>アラームが鳴ること、メモ、シフトなど、それ以外の機能は回数に関係なく使えます。</li>
+                <li>アラームやメモはスマホの中だけに保存します。アカウント登録は不要です。</li>
+            </ul>
+        </div>
+
+        <div class="store-section">
+            <p>アプリのダウンロードはこちらから</p>
+            <div class="store-links">
+                <!-- 公開したら<span>を<a href="Google PlayのURL" class="store-button">に変え、style属性を削除 -->
+                <span class="store-button" style="opacity: 0.4; filter: grayscale(100%);">
+                    <img src="../GooglePlayEn.png" alt="Google Play">
+                </span>
+            </div>
+        </div>
+
+        <p class="policy-note"><a href="privacy.html">プライバシーポリシー</a></p>
+        <p class="credit">効果音：<a href="https://otologic.jp" target="_blank">OtoLogic</a>（CC BY 4.0）</p>
+
+        <a href="../apps.html" class="back-link">← アプリ一覧へ戻る</a>
+    </div>
+
+</body>
+</html>
