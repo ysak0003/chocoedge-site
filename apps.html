@@ -108,7 +108,7 @@
 
         .thumbnail {
             width: 100%;
-            aspect-ratio: 16 / 9;
+            aspect-ratio: 1024 / 500; /* Google Playのフィーチャーグラフィックと同じ比率 */
             background: #f0f0f0;
             border-radius: calc(var(--border-radius) - 5px);
             overflow: hidden;
@@ -231,8 +231,7 @@
             <div class="game-card">
                 <a href="alarm.html" style="text-decoration: none; color: inherit;">
                     <div class="thumbnail">
-                        <!-- ★フィーチャーグラフィックができたら下の1行を <img src="alarm_feature.png" alt="CrocoAlarm" class="game-ss"> に差し替え -->
-                        画像準備中
+                        <img src="alarm_feature.png" alt="CrocoAlarm" class="game-ss">
                     </div>
                     <h3>CrocoAlarm</h3>
                     <p>平日・休日・シフトなど、その日の予定に合わせてアラームがまとめて切り替わる。</p>
