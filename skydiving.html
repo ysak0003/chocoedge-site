@@ -76,9 +76,68 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+        /* ===== 共通メニュー（全ページ同じ内容） ===== */
+        .site-nav {
+            background: #ffffff;
+            border-bottom: 1px solid #eee;
+        }
+        .site-nav-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #554a41;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+        .nav-brand img { height: 32px; width: auto; }
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            margin: 0 0 0 auto;
+            padding: 0;
+        }
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.95em;
+            padding: 4px 2px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+        .nav-links a:hover,
+        .nav-links a.current { border-bottom-color: var(--accent-color); }
+        @media (max-width: 520px) {
+            .nav-brand span { display: none; }
+            .nav-links { gap: 16px; }
+            .nav-links a { font-size: 0.9em; }
+        }
     </style>
 </head>
 <body>
+<nav class="site-nav">
+    <div class="site-nav-inner">
+        <a href="index.html" class="nav-brand"><img src="logo_icon.png" alt=""><span>Cozy Bottle Studio</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="current">ゲーム</a></li>
+            <li><a href="apps.html">アプリ</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+    </div>
+</nav>
 
     <div class="container">
         <h1>脱出ゲーム スカイダイビング<br>高度4000mからの帰り道</h1>

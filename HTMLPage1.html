@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Game Studio | Simple & Cute</title>
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --accent-color: #8ed1ca;
+            --text-main: #554a41;
+            --card-bg: #ffffff;
+            --border-radius: 20px;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            /* ★修正：bodyのflexを削除しました。これで縦に正しく並びます */
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            margin: 0 auto; /* 中央寄せ */
+            padding: 60px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 0.95em;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            border: 2px solid #eaeaea;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .game-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+        }
+
+        .thumbnail {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #f0f0f0;
+            border-radius: calc(var(--border-radius) - 5px);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #bbb;
+        }
+
+        .game-card h3 {
+            font-size: 1.25em;
+            margin: 10px 0 5px 0;
+        }
+
+        .game-card p {
+            font-size: 0.88em;
+            color: #777;
+        }
+
+        .store-links {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .store-button img {
+            height: 35px;
+            width: auto;
+        }
+
+        .footer-item {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .footer-item:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+            <img src="logo.png" alt="Escape Game Studio Logo" style="max-height: 178px; width: auto; object-fit: contain;">
+            <h1 style="font-size: 1.8em;">Escape Game Studio</h1>
+            <p class="subtitle">ちいさな謎と、ほっこりする時間。</p>
+        </header>
+
+        <div class="game-grid">
+            <div class="game-card">
+                <div class="thumbnail"><span>Sample Image</span></div>
+                <h3>パステルルームの脱出</h3>
+                <p>かわいい家具に囲まれたお部屋から脱出！</p>
+                <div class="store-links">
+                    <a href="#" target="_blank" class="store-button">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+                    </a>
+                    <a href="#" class="store-button" style="opacity:0.4; filter:grayscale(100%);">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store">
+                    </a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="thumbnail"><span>Sample Image</span></div>
+                <h3>森のベーカリー</h3>
+                <p>どうぶつたちが働くパン屋さんでお手伝い。</p>
+            </div>
+        </div> </div> <footer style="margin-top: 80px; padding: 40px 0; border-top: 1px solid #eee; text-align: center;">
+        <div class="footer-links" style="margin-bottom: 20px;">
+            <a href="mailto:your-email@example.com" class="footer-item">お問い合わせ</a>
+            <span style="margin: 0 10px; color: #ccc;">|</span>
+            <a href="privacy.html" class="footer-item">プライバシーポリシー</a>
+        </div>
+        <p style="font-size: 0.8em; color: #aaa;">&copy; 2026 Escape Game Studio. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

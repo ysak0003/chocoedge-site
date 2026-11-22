@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アプリ | Cozy Bottle Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --accent-color: #8ed1ca;
+            --text-main: #554a41;
+            --card-bg: #ffffff;
+            --border-radius: 20px;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 1.1;
+            color: #554a41;
+            text-align: left;
+        }
+
+        .logo-text span {
+            display: block;
+        }
+
+        .subtitle {
+            font-size: 0.95em;
+            color: #888;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .page-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            margin: 0 0 5px 0;
+        }
+
+        .section {
+            margin-top: 60px;
+            scroll-margin-top: 20px;
+        }
+
+        .section:first-of-type {
+            margin-top: 0;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin: 0 0 25px 0;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
+            gap: 30px;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            border: 2px solid #eaeaea;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .game-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+        }
+
+        .thumbnail {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #f0f0f0;
+            border-radius: calc(var(--border-radius) - 5px);
+            overflow: hidden;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #bbb;
+        }
+
+        .game-ss {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: inherit;
+        }
+
+        .game-card h3 {
+            font-size: 1.1em;
+            margin: 10px 0 5px 0;
+        }
+
+        .game-card p {
+            font-size: 0.88em;
+            color: #777;
+        }
+
+        .store-links {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .store-button img {
+            height: 35px;
+            width: auto;
+        }
+
+        .footer-item {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .footer-item:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        /* ===== 共通メニュー（全ページ同じ内容） ===== */
+        .site-nav {
+            background: #ffffff;
+            border-bottom: 1px solid #eee;
+        }
+        .site-nav-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #554a41;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+        .nav-brand img { height: 32px; width: auto; }
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            margin: 0 0 0 auto;
+            padding: 0;
+        }
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.95em;
+            padding: 4px 2px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+        .nav-links a:hover,
+        .nav-links a.current { border-bottom-color: var(--accent-color); }
+        @media (max-width: 520px) {
+            .nav-brand span { display: none; }
+            .nav-links { gap: 16px; }
+            .nav-links a { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+<nav class="site-nav">
+    <div class="site-nav-inner">
+        <a href="index.html" class="nav-brand"><img src="logo_icon.png" alt=""><span>Cozy Bottle Studio</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">ゲーム</a></li>
+            <li><a href="apps.html" class="current">アプリ</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="container">
+        <header>
+            <h1 class="page-title">アプリ</h1>
+            <p class="subtitle">Cozy Bottle Studio のアプリをご紹介します。</p>
+        </header>
+
+        <section id="apps" class="section">
+        <div class="game-grid">
+            <div class="game-card">
+                <a href="alarm.html" style="text-decoration: none; color: inherit;">
+                    <div class="thumbnail">
+                        <!-- ★フィーチャーグラフィックができたら下の1行を <img src="alarm_feature.png" alt="CrocoAlarm" class="game-ss"> に差し替え -->
+                        画像準備中
+                    </div>
+                    <h3>CrocoAlarm</h3>
+                    <p>平日・休日・シフトなど、その日の予定に合わせてアラームがまとめて切り替わる。</p>
+                </a>
+                <div class="store-links">
+                    <!-- 公開したら<span>を<a href="Google PlayのURL" target="_blank" class="store-button">に変え、style属性を削除 -->
+                    <span class="store-button" style="opacity: 0.4; filter: grayscale(100%);">
+                        <img src="GooglePlayEn.png" alt="Google Play">
+                    </span>
+                </div>
+            </div>
+
+            <!-- ★新しいアプリを出したら、上の <div class="game-card"> 〜 </div> をコピーしてここに追加 -->
+        </div>
+        </section>
+
+        </div> <footer style="margin-top: 80px; padding: 40px 0; border-top: 1px solid #eee; text-align: center;">
+        <div class="footer-links" style="margin-bottom: 20px;">
+            <a href="contact.html" class="footer-item">お問い合わせ</a>
+            <span style="margin: 0 10px; color: #ccc;">|</span>
+            <a href="privacy.html" class="footer-item">プライバシーポリシー</a>
+        </div>
+        <p style="font-size: 0.8em; color: #aaa;">&copy; 2026 Cozy Bottle Studio. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
